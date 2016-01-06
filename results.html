@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stroop Task Results- Inna</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stroop.css">
+    
+    <script src="http://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <!--script src="jquery.tablesorter.min.js"></script--> 
+    <script src="stroop-results.js"></script>
+    <script src="helper.js"></script>
+    
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <div class="page-header">
+        <h1>Stroop Test Results Example</h1>
+      </div>
+      <table id="resultsDataTable" class="table table-bordered table-hover">
+        <thead> <!-- id  |  Age  |     Education  |  trial  |  color  |  word  |  response  |  RT -->
+          <th>ID</th>
+          <th>Age</th>
+          <th>Education</th>
+          <th>Trial</th>
+          <th>Color</th>
+          <th>Word</th>
+          <th>Response</th>
+          <th>RT</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table> 
+      <button id="allDetailsResults" class="btn btn-default" onclick="downloadResults('ALL')">Download ALL results (in CSV format)</button>
+   </div>
+  </body>
+</html>

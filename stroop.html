@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stroop Task - Inna</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stroop.css">
+    
+    <script src="http://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script src="http://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+    <script src="stroop.js"></script>
+    <script src="helper.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <div class="page-header">
+        <h1>Stroop Test Example</h1>
+      </div>
+      <h3>User Details</h3>
+      <form id="userDetails" class="form-inline">
+        <p>Please fill out the below details before starting the test:</p>
+        <div class="form-group">
+          <label class="control-label" for="userAge">Age</label>
+          <input id="userAge" type="number" min="1" max="99" pattern="[0-9]{1-2}" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="userEducation">Education Level</label>
+          <select id="userEducation" class="form-control">
+            <option></option>
+            <option>High School</option>
+            <option>Some College</option>
+            <option>Associate degree</option>
+            <option>Bachelor degree</option>
+            <option>Master degree</option>
+            <option>Doctoral or professional degree</option>
+          </select>
+        </div>
+        <div class="alert alert-danger alert-block center-block fade" role="alert">
+         <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Please fill out the above field/s.
+        </div>
+      </form>
+
+      <h2>Instructions</h2>
+      <p>Type the first letter of the name of the color that is shown</p>
+      <ul id="colorOptions" class="list-inline"></ul>  
+      <button id="start" type="button" class="btn btn-primary btn-lg" onclick="start()">Start</button>
+   
+      <div id="test" class="text-center panel panel-default">
+          <div id="content" class="text-uppercase panel-heading center-block"></div>
+          <div class="panel-body">
+            <span class="glyphicon" aria-hidden="false"></span>
+            <div id="trialNo" class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0</div>
+            </div>
+          </div>
+      </div>
+      
+      <div id="results" class="text-center panel panel-default">
+        <div class="panel-heading"><h2>Results:</h2></div>
+        <div class="panel-body">
+          <p>correct: <span id="correctTrials"></span></p>
+          <p>When the color of the word matched, your median response time was <span id="matchtime"></span> milliseconds.</p>
+          <p>When the color of the word did not match, your median response time was <span id="nonMatchtime"></span> milliseconds.</p>
+          
+          <table id="resultsDataTable" class="table table-bordered table-hover">
+            <thead> <!-- id  |  Age  |     Education  |  trial  |  color  |  word  |  response  |  RT -->
+              <th>ID</th>
+              <th>Age</th>
+              <th>Education</th>
+              <th>Trial</th>
+              <th>Color</th>
+              <th>Word</th>
+              <th>Response</th>
+              <th>RT</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table> 
+
+          <button id="userResults" class="btn btn-default" onclick="downloadResults()">Download last results (in CSV format)</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

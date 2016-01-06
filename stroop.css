@@ -1,0 +1,23 @@
+.container-fluid {
+  width: 60%;
+}
+
+#test, #content, #results {
+  margin-top: 20px;
+
+}
+
+#content {
+  background-color: black;
+  width: 200px;
+  font-size: 30px;
+}
+
+.alert {
+    width: 440px;
+    margin-top: 10px;
+}
+
+.table {
+	margin-top: 20px;
+}
